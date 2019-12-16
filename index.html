@@ -7,27 +7,30 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Rye&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
     <title>Pokémon application</title>
   </head>
   <body>
-    <nav class='navbar-expand-lg navbar-dark fixed-top'>
-      <img src="img/pokemon.png" width="100" height="80" alt="Pokémon logo">
-      <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-      <button class='navbar-toggler btn-small' type='button' data-toggle='collapse' data-target='#navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
-        <span class='navbar-toggler-icon'></span>
+<p>An App that provides information about several Pokémon species</p>
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color: #7dbf71;">
+<img src="img/pokemon.png" width="60" height="60" class="d-inline-block align-top" alt="Pokémon logo">
+      <a class="navbar-brand" href="index.html">
+        <h1 class="display-6">Pokémon database Application II</h1></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="pokemon-list" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
+      <div class="collapse navbar-collapse" id="navbarNav"></div><!--hamburger menu-->
       </nav>
-    <header class='heading'>
-      <h1>Pokémon database Application II</h1>
-      <p>Pokémon App that provides information about several Pokémon species</p>
-    </header>
+      <div class="container page-container">
+          <h4> <ul class='pokemon-list'></ul></h4>
+         </div>
     <!-- Starting the ootstrap modal  -->
-    <div class='modal fade' id='pokemonModal' role='dialog'>
-     <div class='modal-dialog modal-sm'>
+    <div class='modal fade' id='pokemonModal'tabindex='-1' role='dialog' aria-labelledby = 'pokemon-name' aria-hidden='true'>
+     <div class='modal-dialog modal-sm' role='document'>
        <div class='modal-content'>
          <div class='modal-header'>
            <h5 class='modal-title' id='pokemon-name'>Pokémon Name</h5>
-           <button type='button' class='close' data-dismiss='modal' > Exit </button>
+           <button type='button' class='modal-close btn btn-secondary' data-dismiss='modal' name= 'button' > Exit </button>
          </div>
            <div class='modal-body'>
            <div class='pokemon-img'></div>
@@ -38,17 +41,9 @@
        </div>
      </div>
    </div>
-   <!-- Pokemon Buttons -->
-   <div class='wrapper'>
-    <h4> <ul class='pokemon-list'></ul></h4>
-   </div>
-   <script
-   src="https://code.jquery.com/jquery-3.3.1.min.js"
-   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-   crossorigin="anonymous"></script>
-   <!--Links-->
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
-  </body>
+   <script src="js/scripts.js"></script>
+   </body>
 </html>
