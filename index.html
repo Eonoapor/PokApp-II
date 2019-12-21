@@ -6,25 +6,38 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Rye&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="dist/css/styles.css">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
     <title>Pokémon application</title>
   </head>
   <body>
-<p>An App that provides information about several Pokémon species</p>
-    <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color: #7dbf71;">
-<img src="img/pokemon.png" width="60" height="60" class="d-inline-block align-top" alt="Pokémon logo">
-      <a class="navbar-brand" href="index.html">
-        <h1 class="display-6">Pokémon database Application II</h1></a>
+      <nav class="navbar navbar-expand-sm navbar-light fixed-top" style="background-color: #7dbf71;">
+        <a class="navbar-brand" href="index.html">
+          <img src="img/pokemon.png" width="60" height="60" class="d-inline-block align-top" alt="Pokémon logo">
+        </a>
+      <h1 class="display-6">Pokémon database Application 2</h1>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="pokemon-list" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav"></div><!--hamburger menu-->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://eonoapor.github.io/Pok-mon-List/" target="_blank">Pokémon database App 1 </a>
+      </li>
+    </ul>
+
+    <form class="form-inline"> <!-- Search Bar -->
+      <input id="myInput" class="form-control" type="search" placeholder="Find" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Find</button>
+    </form></div>
       </nav>
       <div class="container page-container">
+
           <h4> <ul class='pokemon-list'></ul></h4>
          </div>
-    <!-- Starting the ootstrap modal  -->
+    <!-- Starting the bootstrap modal  -->
     <div class='modal fade' id='pokemonModal'tabindex='-1' role='dialog' aria-labelledby = 'pokemon-name' aria-hidden='true'>
      <div class='modal-dialog modal-sm' role='document'>
        <div class='modal-content'>
@@ -44,6 +57,6 @@
    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-   <script src="js/scripts.js"></script>
+   <script src="dist/js/scripts.js"></script>
    </body>
 </html>

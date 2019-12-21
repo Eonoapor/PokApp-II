@@ -88,6 +88,15 @@ var pokemonRepository = (function () {
    $('div.pokemon-types').html('Type(s): ' + item.types);
  }
 
+ $(document).ready(function() {
+   $('#myInput').on('keyup', function() {
+     var value = $(this).val().toLowerCase();
+     $('#myList button').filter(function() {
+       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+     });
+   });
+ });
+
  return {
    add: add,
    catchAll: catchAll,
