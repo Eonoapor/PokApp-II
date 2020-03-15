@@ -3,30 +3,25 @@ var pokemonRepository = (function () {
 
  var apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
- function add(pokemon) {
-   repository.push(pokemon);
+//to push values
+ function add(item) {
+   repository.push(item);
  }
 
- function catchAll() {
+// to return array values
+ function getAll() {
    return repository;
  }
 
- function search(searchName) {
-   repository.filter(function(pokemon) {
-     if (pokemon.name === searchName) {
-       return pokemon;
-     }
-  });
- }
 
  function addListItem(pokemon) {
-   var $pokemonList = $('.pokemon-list');
-   var $listItem = $('<li class="pokemon-list-item"></li>');
-   $pokemonList.append($listItem);
-   var $button = $('<button type="button" data-toggle="modal" data-target="#pokemonModal"</button>');
-   $button.text(pokemon.name);
-   $listItem.append($button);
-   $button.on('click', function () {
+   var pokemonList = $('.pokemon-list');
+   var listItem = $('<li class="pokemon-list-item"></li>');
+   pokemonList.append($listItem);
+   var button = ('<button type="button" data-toggle="modal" data-target="#pokemonModal"</button>');
+   button.text(pokemon.name);
+   listItem.append($button);
+   button.on('click', function () {
    showDetails(pokemon);
    });
  }
@@ -39,9 +34,9 @@ var pokemonRepository = (function () {
 
  function loadList() {
 
-   return $.ajax(apiUrl, { dataType: 'json' })
+   return.ajax(apiUrl, { dataType: 'json' })
    .then(function(item) {
-     $.each(item.results, function(index, item) {
+     .each(item.results, function(index, item) {
        var pokemon = {
          name: item.name.charAt(0).toUpperCase() + item.name.slice(1),
          detailsUrl: item.url
@@ -55,7 +50,7 @@ var pokemonRepository = (function () {
 
  function loadDetails(item) {
    var url = item.detailsUrl;
-   return $.ajax(url)
+   return .ajax(url)
    .then(function(details) {
 
      item.imageUrl = details.sprites.front_default;
@@ -73,33 +68,33 @@ var pokemonRepository = (function () {
  }
 
  function showModal(item) {
-   $('#modal-body').html('');
+   ('#modal-body').html('');
 
-   var $nameElement = $('h5');
-   $nameElement.html(item.name.charAt(0).toUpperCase() + item.name.slice(1));
+   var nameElement = ('h5');
+   nameElement.html(item.name.charAt(0).toUpperCase() + item.name.slice(1));
 
-   var $imageElement = $('<img src="' + item.imageUrl + '">');
-   $('div.pokemon-img').html($imageElement);
+   var imageElement = ('<img src="' + item.imageUrl + '">');
+   ('div.pokemon-img').html(imageElement);
 
-   $('div.pokemon-height').html('Height: ' + item.height + 'm');
+   ('div.pokemon-height').html('Height: ' + item.height + 'm');
 
-   $('div.pokemon-weight').html('Weight: ' + item.weight + 'm');
+   ('div.pokemon-weight').html('Weight: ' + item.weight + 'm');
 
-   $('div.pokemon-types').html('Type(s): ' + item.types);
+   ('div.pokemon-types').html('Type(s): ' + item.types);
  }
 
- $(document).ready(function() {
-   $('#myInput').on('keyup', function() {
-     var value = $(this).val().toLowerCase();
-     $('#myList button').filter(function() {
-       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+ (document).ready(function(){
+     ('#pokemon-search').on('keyup', function(){
+       var value = (this).val().toLowerCase();
+       ('.pokemon-list_item').filter(function(){
+         (this).toggle((this).text().toLowerCase().indexOf(value) > -1)
+       });
      });
    });
- });
 
  return {
    add: add,
-   catchAll: catchAll,
+   getAll: getAll,
    addListItem: addListItem,
    search: search,
    showDetails: showDetails,
